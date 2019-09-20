@@ -144,8 +144,8 @@ class SuperJobs(Jobs):
 
 
 class HHRU(Jobs):
-    endpoint = 'https://hh.ru/search/vacancy?L_is_autosearch=false\
-        &area=1&clusters=true&enable_snippets=true&'
+    endpoint = 'https://hh.ru/search/vacancy?L_is_autosearch=false' + \
+        '&area=1&clusters=true&enable_snippets=true&'
 
     def getTotalPages(self, dom):
         try:
@@ -218,7 +218,7 @@ sj = SuperJobs(vacancy, pages)
 print('\n=== Парсинг данных с сайта HH.ru === ')
 hh = HHRU(vacancy, pages)
 
-print(f'\n Сохраняем {sj.total+hh.total} вакансий в result.json')
+print(f'\n Сохраняем {sj.total+hh.total} вакансий в result.csv')
 print('Анализ данных смотреть в lesson2.ipynb')
 
 columns = [
@@ -232,5 +232,5 @@ columns = [
 ]
 
 df = pd.DataFrame(sj.data + hh.data, columns=columns)
-df.to_json('result.json')
+df.to_csv('result.csv')
 print(df.head())
