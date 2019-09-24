@@ -1,0 +1,371 @@
+bash-3.2$ python3 lesson3.py
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор :
+
+bash-3.2$ python3 lesson3.py
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 3
+
+удалено 62 вакансий
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 1
+
+Введите вакансию: Менеджер
+Введите кол-во страниц [2]: 2
+Начиная с страницы [1]:
+==================== SuperJobs ====================
+ Запрашиваем главную страницу ... всего найдено 100 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+ Обработано 2 страниц(ы) всего добавлено 40 вакансий
+==================== HHRU ====================
+ Запрашиваем главную страницу ... всего найдено 100 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+ Обработано 2 страниц(ы) всего добавлено 40 вакансий
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 1
+
+Введите вакансию: Менеджер
+Введите кол-во страниц [2]:
+Начиная с страницы [1]: 2
+==================== SuperJobs ====================
+ Запрашиваем главную страницу ... всего найдено 100 страниц
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 0, пропущено 20 вакансий
+ Обработано 2 страниц(ы) всего добавлено 0 вакансий
+==================== HHRU ====================
+ Запрашиваем главную страницу ... всего найдено 100 страниц
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 0, пропущено 20 вакансий
+ Обработано 2 страниц(ы) всего добавлено 0 вакансий
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 1
+
+Введите вакансию: PHP Developer
+Введите кол-во страниц [2]: 3
+Начиная с страницы [1]:
+==================== SuperJobs ====================
+ Запрашиваем главную страницу ... всего найдено 2 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+  > парсим вакансии на странице 2 ... найдено 2 вакансий ... добавлено 2, пропущено 0 вакансий
+ Обработано 2 страниц(ы) всего добавлено 22 вакансий
+==================== HHRU ====================
+ Запрашиваем главную страницу ... всего найдено 69 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+  > парсим вакансии на странице 3 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+ Обработано 3 страниц(ы) всего добавлено 60 вакансий
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату:
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату: 100000
+ учитывать "Договорную" зарплату [y/N]:
+ искать текст:
+
+Поиск вакансий с ЗП выше 100000   ... Найдено 74 вакансий
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Вакансия                                                                         |         Зарплата          |            Компания            | Ссылка
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| PHP Developer                                                                    |    от 80000 до 140000     |             Compo              | https://hh.ru/vacancy/33585124?query=PHP%20Developer
+| Full stack разработчик (php)                                                     |    от 160000 до 200000    |             Фроза              | https://hh.ru/vacancy/33721510?query=PHP%20Developer
+| Middle/Senior разработчик PHP (Symfony)                                          |    от 100000 до 200000    |         ООО ЮНИТПЭЙРУ          | https://hh.ru/vacancy/32047743?query=PHP%20Developer
+| Ведущий Backend PHP-разработчик                                                  |    от 130000 до 160000    |       ООО Кар-Фин сервис       | https://hh.ru/vacancy/33349208?query=PHP%20Developer
+| PHP developer (Symfony)                                                          |    от 100000 до 200000    |    ООО Управление Бизнесом     | https://hh.ru/vacancy/31805670?query=PHP%20Developer
+| Веб-разработчик/Frontend developer уровня Middle                                 |    от 85000 до 115000     |         ООО МЕДИМПОРТ          | https://hh.ru/vacancy/33691207?query=PHP%20Developer
+| Middle+/Senior Golang Developer                                                  |    от 200000 до 260000    |            Izibits             | https://hh.ru/vacancy/33370811?query=PHP%20Developer
+| Senior java developer                                                            |    от 200000 до 250000    |          HR EXECUTIVE          | https://hh.ru/vacancy/33634622?query=PHP%20Developer
+| Веб-программист (PHP)                                                            |          120000           | НПП Гарант Сервис Университет  | https://www.superjob.ru/vakansii/veb-programmist-31375774.html
+| Backend-разработчик на PHP (Middle)                                              |          130000           |   Крупная Сервисная Компания   | https://www.superjob.ru/vakansii/backend-razrabotchik-na-php-30750769.html
+| Team Lead / Ведущий php разработчик                                              |          170000           |     Торговый парк "Отрада"     | https://www.superjob.ru/vakansii/team-lead-32484927.html
+| PHP-программист                                                                  |          140000           | НПП Гарант Сервис Университет  | https://www.superjob.ru/vakansii/php-programmist-30349329.html
+| Руководитель отдела мобильной разработки / Team lead                             |    от 300000 до 450000    | Кадровое агентство уникальных  | https://www.superjob.ru/vakansii/rukovoditel-otdela-mobilnoj-razrabotki-32439514.html
+| Senior PHP developer                                                             |    от 140000 до 200000    |            Zoon.ru             | https://hh.ru/vacancy/31455164?query=PHP%20Developer
+| Web-разработчик                                                                  |    от 80000 до 140000     |         ООО С-Протект          | https://hh.ru/vacancy/33435587?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 130000 до 150000    |           РосТендер            | https://hh.ru/vacancy/33691753?query=PHP%20Developer
+| Руководитель разработки                                                          |          150000           |            ООО АЙРО            | https://hh.ru/vacancy/33717815?query=PHP%20Developer
+| Team-lead / Ведущий веб-разработчик (Битрикс)                                    |          180000           |       Леди и Джентльмен        | https://hh.ru/vacancy/32758713?query=PHP%20Developer
+| PHP-программист                                                                  |          150000           |    ООО Мастерская Наградион    | https://hh.ru/vacancy/33637455?query=PHP%20Developer
+| Senior PHP Developer                                                             |    от 160000 до 200000    |     ООО Вебинар Технологии     | https://hh.ru/vacancy/32824430?query=PHP%20Developer
+| Senior PHP developer                                                             |    от 140000 до 170000    | Представительство МКК ТРИДЕР Ф | https://hh.ru/vacancy/33540885?query=PHP%20Developer
+| PHP Developer                                                                    |    от 140000 до 160000    |          Алгоритмика           | https://hh.ru/vacancy/31567138?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 100000 до 180000    |          ООО Промторг          | https://hh.ru/vacancy/32944626?query=PHP%20Developer
+| PHP разработчик / PHP Developer                                                  |    от 150000 до 220000    |          Spice Agency          | https://hh.ru/vacancy/29292982?query=PHP%20Developer
+| Веб-разработчик / Web developer                                                  |    от 140000 до 180000    |          FUSION CORE           | https://hh.ru/vacancy/33543881?query=PHP%20Developer
+| PHP developer (Yii, Yii2)                                                        |    от 100000 до 120000    |            Безлимит            | https://hh.ru/vacancy/27773136?query=PHP%20Developer
+| Middle PHP Developer                                                             |    от 120000 до 180000    |          YCLIENTS LLC          | https://hh.ru/vacancy/33430406?query=PHP%20Developer
+| PHP Developer / PHP разработчик (middle)                                         |    от 120000 до 140000    |          Money4leads           | https://hh.ru/vacancy/33565991?query=PHP%20Developer
+| Fullstack программист (PHP, JavaScript)                                          |    от 100000 до 130000    |          Мир Магнитов          | https://hh.ru/vacancy/33371866?query=PHP%20Developer
+| Ведущий web-разработчик / PHP - developer                                        |          130000           |     ООО ВсеИнструменты.ру      | https://hh.ru/vacancy/33699536?query=PHP%20Developer
+| PHP-разработчик                                                                  |          145000           |  Академия, издательский центр  | https://hh.ru/vacancy/33264326?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 100000 до 140000    |         TVKINORADIO.ru         | https://hh.ru/vacancy/33370353?query=PHP%20Developer
+| Senior Php Developer / Full stack Developer                                      |    от 150000 до 250000    |     ООО Платформа Геткурс      | https://hh.ru/vacancy/32984381?query=PHP%20Developer
+| PHP backend developer                                                            |    от 120000 до 140000    |          Money4leads           | https://hh.ru/vacancy/33565994?query=PHP%20Developer
+| Backend developer ( Разработчик PHP )                                            |          250000           |            Мегаплан            | https://hh.ru/vacancy/33423906?query=PHP%20Developer
+| Программист PHP, Yii2                                                            |    от 100000 до 150000    |         ООО Принт Бар          | https://hh.ru/vacancy/31975503?query=PHP%20Developer
+| Веб-разработчик (PHP + Yii2)                                                     |          150000           |           Shop&Show            | https://hh.ru/vacancy/31686009?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |    от 150000 до 200000    |         ООО Принт Бар          | https://hh.ru/vacancy/31984928?query=PHP%20Developer
+| Fullstack-разработчик (PHP)                                                      |          140000           |          ООО SFBTech           | https://hh.ru/vacancy/33368611?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |          200000           |       Ассоциация IPChain       | https://hh.ru/vacancy/33695959?query=PHP%20Developer
+| PHP-программист                                                                  |    от 100000 до 150000    |        ООО Адалт Трейд         | https://hh.ru/vacancy/33336147?query=PHP%20Developer
+| Senior Vue.js Front-end Developer                                                |    от 180000 до 230000    |          YCLIENTS LLC          | https://hh.ru/vacancy/32342494?query=PHP%20Developer
+| PHP-программист                                                                  |    от 60000 до 150000     |          ООО Флекскор          | https://hh.ru/vacancy/33440257?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 95000 до 150000     |            Веб-Мост            | https://hh.ru/vacancy/32333890?query=PHP%20Developer
+| Senior PHP программист                                                           |          170000           |              JCat              | https://hh.ru/vacancy/33535392?query=PHP%20Developer
+| PHP программист                                                                  |    от 100000 до 130000    |             Banzai             | https://hh.ru/vacancy/33264012?query=PHP%20Developer
+| PHP developer                                                                    |    от 80000 до 200000     |          ООО Геймгард          | https://hh.ru/vacancy/33520095?query=PHP%20Developer
+| Веб-программист (PHP)                                                            |          120000           |             Гарант             | https://hh.ru/vacancy/25550854?query=PHP%20Developer
+| Менеджер по продажам оборудования для фармпроизводства                           |    от 80000 до 150000     | Кадровое агентство уникальных  | https://www.superjob.ru/vakansii/menedzher-po-prodazham-oborudovaniya-dlya-farmproizvodstva-32489693.html
+| Менеджер по продажам полиграфических услуг                                       |    от 50000 до 150000     |          Русевропринт          | https://www.superjob.ru/vakansii/menedzher-po-prodazham-poligraficheskih-uslug-31072592.html
+| Менеджер по продажам в салон дверей                                              |    от 50000 до 150000     |   Шитов А. М. ("Бастион-С")    | https://www.superjob.ru/vakansii/menedzher-po-prodazham-v-salon-dverej-29068182.html
+| Менеджер по работе с клиентами                                                   |    от 65000 до 116000     |             Билайн             | https://www.superjob.ru/vakansii/menedzher-po-rabote-s-klientami-32489483.html
+| MICE-менеджер                                                                    |    от 80000 до 190000     |         ООО Атис Групп         | https://hh.ru/vacancy/33731098?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 80000 до 120000     |           ООО Легион           | https://hh.ru/vacancy/31562794?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с клиентами                                                   |    от 60000 до 150000     | ООО Центр подготовки специалис | https://hh.ru/vacancy/33728354?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 60000 до 150000     |         ООО Top Units          | https://hh.ru/vacancy/33730136?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 80000 до 120000     |         Компания нек4          | https://hh.ru/vacancy/32377284?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 60000 до 150000     | ООО Центр подготовки специалис | https://hh.ru/vacancy/31800955?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 80000 до 200000     |        ООО ТорнадоЛого         | https://hh.ru/vacancy/33464083?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер отдела продаж                                                           |    от 120000 до 180000    |         ООО Shokobrand         | https://hh.ru/vacancy/33697611?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с клиентами                                                   |    от 35000 до 150000     |            Си-Эн-Эс            | https://hh.ru/vacancy/33454105?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 50000 до 150000     |            Мос-Пайп            | https://hh.ru/vacancy/33601190?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |          250000           |            SUPERBAU            | https://hh.ru/vacancy/33698801?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с ключевыми клиентами                                         |          127500           |     Сбербанк для экспертов     | https://hh.ru/vacancy/33068024?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с клиентами                                                   |    от 60000 до 150000     |        ООО АБН Консалт         | https://hh.ru/vacancy/33417165?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам в клуб (м. Белорусская)                                     |    от 80000 до 150000     |            Dr.Loder            | https://hh.ru/vacancy/33279665?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с клиентами                                                   |    от 60000 до 180000     | ООО Учебный Центр Просвещение  | https://hh.ru/vacancy/33680081?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 60000 до 150000     |         ООО АДМ дентал         | https://hh.ru/vacancy/33687103?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 60000 до 180000     | ООО Высшая Школа Технологий и  | https://hh.ru/vacancy/33700235?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по работе с клиентами                                                   |    от 60000 до 180000     | Нек. орг. Современная Научно-Т | https://hh.ru/vacancy/33678385?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Senior PHP developer                                                             |          160000           |           Фабрикант            | https://www.superjob.ru/vakansii/senior-php-developer-32391327.html
+| Программист С++, Golang, PHP, Python, DevOPS (релокация на о. Бали)              |    от 100000 до 250000    |      Business connection       | https://www.superjob.ru/vakansii/programmist-s-32517185.html
+| Разработчик PHP                                                                  |          130000           |        Аптеки Столички         | https://www.superjob.ru/vakansii/razrabotchik-php-32184335.html
+| PHP-программист                                                                  |    от 100000 до 200000    |           Стаффмикс            | https://www.superjob.ru/vakansii/php-programmist-32552502.html
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату: 0
+ учитывать "Договорную" зарплату [y/N]: Y
+ искать текст: yii
+
+Поиск вакансий с ЗП выше 0 (учитывая договорную) содержащих текст "yii" ... Найдено 7 вакансий
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Вакансия                                                                         |         Зарплата          |            Компания            | Ссылка
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| PHP-программист (Laravel5 / Yii2)                                                |    от 80000 до 100000     |            ООО Дека            | https://hh.ru/vacancy/33711459?query=PHP%20Developer
+| Веб-разработчик PHP, Yii2, Angular (Fullstack)                                   |        Договорная         |       Климат-Мастер МСК        | https://www.superjob.ru/vakansii/veb-razrabotchik-php-32573206.html
+| PHP developer (Yii, Yii2)                                                        |    от 100000 до 120000    |            Безлимит            | https://hh.ru/vacancy/27773136?query=PHP%20Developer
+| Программист PHP, Yii2                                                            |    от 100000 до 150000    |         ООО Принт Бар          | https://hh.ru/vacancy/31975503?query=PHP%20Developer
+| Веб-разработчик (PHP + Yii2)                                                     |          150000           |           Shop&Show            | https://hh.ru/vacancy/31686009?query=PHP%20Developer
+| Программист PHP (Yii2, laravel, Zend)                                            |        Договорная         | Европейская Юридическая Служба | https://www.superjob.ru/vakansii/programmist-php-30167700.html
+| Разработчик PHP Yii                                                              |        Договорная         |       Климат-Мастер МСК        | https://www.superjob.ru/vakansii/razrabotchik-php-yii-31304700.html
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 1
+
+Введите вакансию: PHP
+Введите кол-во страниц [2]:
+Начиная с страницы [1]:
+==================== SuperJobs ====================
+ Запрашиваем главную страницу ... всего найдено 3 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 0, пропущено 20 вакансий
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 20, пропущено 0 вакансий
+ Обработано 2 страниц(ы) всего добавлено 20 вакансий
+==================== HHRU ====================
+ Запрашиваем главную страницу ... всего найдено 74 страниц
+  > парсим вакансии на странице 1 ... найдено 20 вакансий ... добавлено 0, пропущено 20 вакансий
+  > парсим вакансии на странице 2 ... найдено 20 вакансий ... добавлено 2, пропущено 18 вакансий
+ Обработано 2 страниц(ы) всего добавлено 2 вакансий
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату: 0
+ учитывать "Договорную" зарплату [y/N]:
+ искать текст: php
+
+Поиск вакансий с ЗП выше 0  содержащих текст "php" ... Найдено 56 вакансий
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Вакансия                                                                         |         Зарплата          |            Компания            | Ссылка
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| PHP-программист (Laravel5 / Yii2)                                                |    от 80000 до 100000     |            ООО Дека            | https://hh.ru/vacancy/33711459?query=PHP%20Developer
+| PHP Developer                                                                    |    от 80000 до 140000     |             Compo              | https://hh.ru/vacancy/33585124?query=PHP%20Developer
+| Full stack разработчик (php)                                                     |    от 160000 до 200000    |             Фроза              | https://hh.ru/vacancy/33721510?query=PHP%20Developer
+| Middle/Senior разработчик PHP (Symfony)                                          |    от 100000 до 200000    |         ООО ЮНИТПЭЙРУ          | https://hh.ru/vacancy/32047743?query=PHP%20Developer
+| Junior PHP-Программист ( Backend )                                               |           50000           |             amoCRM             | https://hh.ru/vacancy/33527472?query=PHP%20Developer
+| Ведущий Backend PHP-разработчик                                                  |    от 130000 до 160000    |       ООО Кар-Фин сервис       | https://hh.ru/vacancy/33349208?query=PHP%20Developer
+| PHP developer (Symfony)                                                          |    от 100000 до 200000    |    ООО Управление Бизнесом     | https://hh.ru/vacancy/31805670?query=PHP%20Developer
+| Веб-программист (PHP)                                                            |          120000           | НПП Гарант Сервис Университет  | https://www.superjob.ru/vakansii/veb-programmist-31375774.html
+| Backend-разработчик на PHP (Middle)                                              |          130000           |   Крупная Сервисная Компания   | https://www.superjob.ru/vakansii/backend-razrabotchik-na-php-30750769.html
+| Team Lead / Ведущий php разработчик                                              |          170000           |     Торговый парк "Отрада"     | https://www.superjob.ru/vakansii/team-lead-32484927.html
+| PHP-программист                                                                  |          140000           | НПП Гарант Сервис Университет  | https://www.superjob.ru/vakansii/php-programmist-30349329.html
+| Программист PHP                                                                  |           40000           |          ГБУК ЦБС САО          | https://www.superjob.ru/vakansii/programmist-php-31614732.html
+| PHP-разработчик                                                                  |           90000           |            NodaSoft            | https://hh.ru/vacancy/33730478?query=PHP%20Developer
+| Senior PHP developer                                                             |    от 140000 до 200000    |            Zoon.ru             | https://hh.ru/vacancy/31455164?query=PHP%20Developer
+| PHP back-end/fullstack разработчик                                               |          100000           |        ООО Фаст Финанс         | https://hh.ru/vacancy/33708358?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 130000 до 150000    |           РосТендер            | https://hh.ru/vacancy/33691753?query=PHP%20Developer
+| Программист PHP                                                                  |          100000           |             WedWed             | https://hh.ru/vacancy/33622789?query=PHP%20Developer
+| PHP-программист                                                                  |          150000           |    ООО Мастерская Наградион    | https://hh.ru/vacancy/33637455?query=PHP%20Developer
+| Senior PHP Developer                                                             |    от 160000 до 200000    |     ООО Вебинар Технологии     | https://hh.ru/vacancy/32824430?query=PHP%20Developer
+| Senior PHP developer                                                             |    от 140000 до 170000    | Представительство МКК ТРИДЕР Ф | https://hh.ru/vacancy/33540885?query=PHP%20Developer
+| PHP Developer                                                                    |    от 140000 до 160000    |          Алгоритмика           | https://hh.ru/vacancy/31567138?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 100000 до 180000    |          ООО Промторг          | https://hh.ru/vacancy/32944626?query=PHP%20Developer
+| PHP разработчик / PHP Developer                                                  |    от 150000 до 220000    |          Spice Agency          | https://hh.ru/vacancy/29292982?query=PHP%20Developer
+| PHP JS developer                                                                 |          100000           |         ООО КоллКипер          | https://hh.ru/vacancy/33057747?query=PHP%20Developer
+| PHP developer (Yii, Yii2)                                                        |    от 100000 до 120000    |            Безлимит            | https://hh.ru/vacancy/27773136?query=PHP%20Developer
+| PHP-программист/PHP-developer                                                    |           80000           | Агентство страховых технологий | https://hh.ru/vacancy/33698498?query=PHP%20Developer
+| PHP-программист                                                                  |      от 2000 до 4200      |             AXIOMA             | https://hh.ru/vacancy/33638596?query=PHP%20Developer
+| Middle PHP Developer                                                             |    от 120000 до 180000    |          YCLIENTS LLC          | https://hh.ru/vacancy/33430406?query=PHP%20Developer
+| PHP Developer / PHP разработчик (middle)                                         |    от 120000 до 140000    |          Money4leads           | https://hh.ru/vacancy/33565991?query=PHP%20Developer
+| Fullstack программист (PHP, JavaScript)                                          |    от 100000 до 130000    |          Мир Магнитов          | https://hh.ru/vacancy/33371866?query=PHP%20Developer
+| Ведущий web-разработчик / PHP - developer                                        |          130000           |     ООО ВсеИнструменты.ру      | https://hh.ru/vacancy/33699536?query=PHP%20Developer
+| PHP-разработчик                                                                  |          145000           |  Академия, издательский центр  | https://hh.ru/vacancy/33264326?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 100000 до 140000    |         TVKINORADIO.ru         | https://hh.ru/vacancy/33370353?query=PHP%20Developer
+| Senior Php Developer / Full stack Developer                                      |    от 150000 до 250000    |     ООО Платформа Геткурс      | https://hh.ru/vacancy/32984381?query=PHP%20Developer
+| PHP backend developer                                                            |    от 120000 до 140000    |          Money4leads           | https://hh.ru/vacancy/33565994?query=PHP%20Developer
+| Backend developer ( Разработчик PHP )                                            |          250000           |            Мегаплан            | https://hh.ru/vacancy/33423906?query=PHP%20Developer
+| Программист PHP, Yii2                                                            |    от 100000 до 150000    |         ООО Принт Бар          | https://hh.ru/vacancy/31975503?query=PHP%20Developer
+| Веб-разработчик (PHP + Yii2)                                                     |          150000           |           Shop&Show            | https://hh.ru/vacancy/31686009?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |    от 150000 до 200000    |         ООО Принт Бар          | https://hh.ru/vacancy/31984928?query=PHP%20Developer
+| Fullstack-разработчик (PHP)                                                      |          140000           |          ООО SFBTech           | https://hh.ru/vacancy/33368611?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |          200000           |       Ассоциация IPChain       | https://hh.ru/vacancy/33695959?query=PHP%20Developer
+| PHP-программист                                                                  |    от 100000 до 150000    |        ООО Адалт Трейд         | https://hh.ru/vacancy/33336147?query=PHP%20Developer
+| PHP-программист                                                                  |    от 60000 до 150000     |          ООО Флекскор          | https://hh.ru/vacancy/33440257?query=PHP%20Developer
+| PHP-разработчик                                                                  |    от 95000 до 150000     |            Веб-Мост            | https://hh.ru/vacancy/32333890?query=PHP%20Developer
+| Senior PHP программист                                                           |          170000           |              JCat              | https://hh.ru/vacancy/33535392?query=PHP%20Developer
+| PHP разработчик                                                                  |           80000           |              JCat              | https://hh.ru/vacancy/33535391?query=PHP%20Developer
+| PHP программист                                                                  |    от 100000 до 130000    |             Banzai             | https://hh.ru/vacancy/33264012?query=PHP%20Developer
+| PHP developer                                                                    |    от 80000 до 200000     |          ООО Геймгард          | https://hh.ru/vacancy/33520095?query=PHP%20Developer
+| Веб-программист (PHP)                                                            |          120000           |             Гарант             | https://hh.ru/vacancy/25550854?query=PHP%20Developer
+| Веб-разработчик (PHP, Laravel)                                                   |    от 50000 до 100000     |            Веб-Мост            | https://hh.ru/vacancy/33469996?query=PHP%20Developer
+| Senior PHP developer                                                             |          160000           |           Фабрикант            | https://www.superjob.ru/vakansii/senior-php-developer-32391327.html
+| Программист С++, Golang, PHP, Python, DevOPS (релокация на о. Бали)              |    от 100000 до 250000    |      Business connection       | https://www.superjob.ru/vakansii/programmist-s-32517185.html
+| Разработчик PHP                                                                  |          130000           |        Аптеки Столички         | https://www.superjob.ru/vakansii/razrabotchik-php-32184335.html
+| PHP-программист                                                                  |    от 100000 до 200000    |           Стаффмикс            | https://www.superjob.ru/vakansii/php-programmist-32552502.html
+| Программист PHP                                                                  |           90000           |            ООО БИТ             | https://hh.ru/vacancy/33424732?query=PHP
+| Программист PHP                                                                  |    от 80000 до 140000     |           ООО Подъем           | https://hh.ru/vacancy/33250146?query=PHP
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату: 180000
+ учитывать "Договорную" зарплату [y/N]:
+ искать текст:
+
+Поиск вакансий с ЗП выше 180000   ... Найдено 22 вакансий
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Вакансия                                                                         |         Зарплата          |            Компания            | Ссылка
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Full stack разработчик (php)                                                     |    от 160000 до 200000    |             Фроза              | https://hh.ru/vacancy/33721510?query=PHP%20Developer
+| Middle/Senior разработчик PHP (Symfony)                                          |    от 100000 до 200000    |         ООО ЮНИТПЭЙРУ          | https://hh.ru/vacancy/32047743?query=PHP%20Developer
+| PHP developer (Symfony)                                                          |    от 100000 до 200000    |    ООО Управление Бизнесом     | https://hh.ru/vacancy/31805670?query=PHP%20Developer
+| Middle+/Senior Golang Developer                                                  |    от 200000 до 260000    |            Izibits             | https://hh.ru/vacancy/33370811?query=PHP%20Developer
+| Senior java developer                                                            |    от 200000 до 250000    |          HR EXECUTIVE          | https://hh.ru/vacancy/33634622?query=PHP%20Developer
+| Руководитель отдела мобильной разработки / Team lead                             |    от 300000 до 450000    | Кадровое агентство уникальных  | https://www.superjob.ru/vakansii/rukovoditel-otdela-mobilnoj-razrabotki-32439514.html
+| Senior PHP developer                                                             |    от 140000 до 200000    |            Zoon.ru             | https://hh.ru/vacancy/31455164?query=PHP%20Developer
+| Senior PHP Developer                                                             |    от 160000 до 200000    |     ООО Вебинар Технологии     | https://hh.ru/vacancy/32824430?query=PHP%20Developer
+| PHP разработчик / PHP Developer                                                  |    от 150000 до 220000    |          Spice Agency          | https://hh.ru/vacancy/29292982?query=PHP%20Developer
+| Senior Php Developer / Full stack Developer                                      |    от 150000 до 250000    |     ООО Платформа Геткурс      | https://hh.ru/vacancy/32984381?query=PHP%20Developer
+| Backend developer ( Разработчик PHP )                                            |          250000           |            Мегаплан            | https://hh.ru/vacancy/33423906?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |    от 150000 до 200000    |         ООО Принт Бар          | https://hh.ru/vacancy/31984928?query=PHP%20Developer
+| Senior PHP developer / Team Lead                                                 |          200000           |       Ассоциация IPChain       | https://hh.ru/vacancy/33695959?query=PHP%20Developer
+| Senior Vue.js Front-end Developer                                                |    от 180000 до 230000    |          YCLIENTS LLC          | https://hh.ru/vacancy/32342494?query=PHP%20Developer
+| PHP developer                                                                    |    от 80000 до 200000     |          ООО Геймгард          | https://hh.ru/vacancy/33520095?query=PHP%20Developer
+| Руководитель web разработки (Team Lead)                                          |          220000           |             Альянс             | https://www.superjob.ru/vakansii/rukovoditel-web-razrabotki-32494156.html
+| MICE-менеджер                                                                    |    от 80000 до 190000     |         ООО Атис Групп         | https://hh.ru/vacancy/33731098?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |    от 80000 до 200000     |        ООО ТорнадоЛого         | https://hh.ru/vacancy/33464083?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Менеджер по продажам                                                             |          250000           |            SUPERBAU            | https://hh.ru/vacancy/33698801?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Программист С++, Golang, PHP, Python, DevOPS (релокация на о. Бали)              |    от 100000 до 250000    |      Business connection       | https://www.superjob.ru/vakansii/programmist-s-32517185.html
+| PHP-программист                                                                  |    от 100000 до 200000    |           Стаффмикс            | https://www.superjob.ru/vakansii/php-programmist-32552502.html
+| Web-программист                                                                  |    от 100000 до 200000    |           Стаффмикс            | https://www.superjob.ru/vakansii/web-programmist-32552761.html
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор : 2
+
+Введите зарплату: 230000
+ учитывать "Договорную" зарплату [y/N]:
+ искать текст:
+
+Поиск вакансий с ЗП выше 230000   ... Найдено 7 вакансий
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Вакансия                                                                         |         Зарплата          |            Компания            | Ссылка
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Middle+/Senior Golang Developer                                                  |    от 200000 до 260000    |            Izibits             | https://hh.ru/vacancy/33370811?query=PHP%20Developer
+| Senior java developer                                                            |    от 200000 до 250000    |          HR EXECUTIVE          | https://hh.ru/vacancy/33634622?query=PHP%20Developer
+| Руководитель отдела мобильной разработки / Team lead                             |    от 300000 до 450000    | Кадровое агентство уникальных  | https://www.superjob.ru/vakansii/rukovoditel-otdela-mobilnoj-razrabotki-32439514.html
+| Senior Php Developer / Full stack Developer                                      |    от 150000 до 250000    |     ООО Платформа Геткурс      | https://hh.ru/vacancy/32984381?query=PHP%20Developer
+| Backend developer ( Разработчик PHP )                                            |          250000           |            Мегаплан            | https://hh.ru/vacancy/33423906?query=PHP%20Developer
+| Менеджер по продажам                                                             |          250000           |            SUPERBAU            | https://hh.ru/vacancy/33698801?query=%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80
+| Программист С++, Golang, PHP, Python, DevOPS (релокация на о. Бали)              |    от 100000 до 250000    |      Business connection       | https://www.superjob.ru/vakansii/programmist-s-32517185.html
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Меню:
+ 1 - Парсинг вакансий в БД
+ 2 - Поиск вакансий по зарплате
+ 3 - Очистить БД
+ [enter] - Выход
+Сделайте выбор :
+
+bash-3.2$ exit
