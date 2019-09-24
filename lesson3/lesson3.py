@@ -27,18 +27,45 @@ def insertItems(items):
         return cnt
 
 
-def search(salary):
-    query = {'$or': [
-        {'salaryMin': {'$gt': salary}},
-        {'salaryMax': {'$gt': salary}},
-    ]}
+def search(salary, nosalary=False, text=False):
+    query = {'salaryMax': {'$gt': salary}}
+
+    if nosalary:
+        query = {'$or': [
+            {'salaryMax': None},
+            query
+        ]}
+
+    if text:
+        rgx = re.compile('.*'+text+'.*', re.IGNORECASE)
+        query = {'$and': [
+            query,
+            {'title': rgx}
+        ]}
+
+    print(f'\nПоиск вакансий с ЗП выше {salary}',
+          '(учитывая договорную)' if nosalary else '',
+          f'содержащих текст "{text}"' if text else '', end=' ... ')
+
     cnt = db.jobs.count_documents(query)
     if not cnt:
-        print(f'Не найдено вакансий с зарплатой больше чем {salary}')
+        print(f'Ничего не найдено!')
         return
 
-    print(f'Найдено {cnt} вакансий:')
+    print(f'Найдено {cnt} вакансий')
+    print('-' * 250, f'| {"Вакансия":80.80} | {"Зарплата":^25.25}'
+          f' | {"Компания":^30.30} | {"Ссылка"}', '-' * 250,
+          sep='\n')
     r = db.jobs.find(query)
+    for i in r:
+        sal = 'Договорная'
+        if i.get('salaryMax'):
+            sal = str(i['salaryMax']) if i['salaryMax'] == i['salaryMin'] \
+                else f"от {i['salaryMin']} до {i['salaryMax']}"
+        print(f'| {i["title"]:80.80} | {sal:^25.25} | '
+              f'{i.get("company", ""):^30.30} | {i.get("link", "")}')
+
+    print('-' * 250)
 
 
 class Jobs(object):
@@ -182,6 +209,7 @@ class SuperJobs(Jobs):
             a = re.sub(r'[^\d—]', '', t).split('—')
             if a[0].isdigit():
                 item['salaryMin'] = int(a[0])
+                item['salaryMax'] = int(a[0])
             if len(a) > 1 and a[1].isdigit():
                 item['salaryMax'] = int(a[1])
         except:
@@ -204,9 +232,6 @@ class SuperJobs(Jobs):
 
 
 class HHRU(Jobs):
-    endpoint = 'https://hh.ru/search/vacancy?L_is_autosearch=false' + \
-        '&area=1&clusters=true&enable_snippets=true&'
-
     def getTotalPages(self, dom):
         try:
             a = dom.findAll('span', {'class': 'pager-item-not-in-short-range'})
@@ -216,22 +241,28 @@ class HHRU(Jobs):
             return 0
 
     def getItem(self, dom):
-        item = [None] * 6 + ['HH.RU']
+        item = super().getItem(dom)
 
         try:
             t = dom.find('a', {'data-qa': 'vacancy-serp__vacancy-title'})
-            item[0] = t.text.strip()
-            item[3] = self.endpoint + t['href']
-        except:
+            item['title'] = t.text.strip()
+            item['link'] = t['href']
+
+            t = dom.find('a', {'data-qa': 'vacancy-serp__vacancy_response'})
+            item['id'] = item['class'] + '-' + \
+                re.sub(r'.+vacancyId\=(\d+)\D+$', '\\1', t['href'])
+        except Exception as e:
+            self.log(f' >>>> ERROR: {e}')
             return False
 
         try:
-            item[4] = dom.find(
+            item['company'] = dom.find(
                 'a', {'data-qa': 'vacancy-serp__vacancy-employer'}).text\
                 .strip()
             t = dom.find('span',
                          {'data-qa': 'vacancy-serp__vacancy-address'})
-            item[5] = re.sub(r'и еще \d+', '', t.text).strip()
+            a = re.sub(r'и еще \d+', '', t.text).strip().split(',')
+            item['location'] = list(map(lambda x: x.strip(), a))
         except:
             pass
 
@@ -239,30 +270,25 @@ class HHRU(Jobs):
             t = dom.find('div', {'class': 'vacancy-serp-item__compensation'})
             a = re.sub(r'[^\d-]', '', t.text).split('-')
             if a[0].isdigit():
-                item[1] = int(a[0])
+                item['salaryMin'] = int(a[0])
+                item['salaryMax'] = int(a[0])
             if len(a) > 1 and a[1].isdigit():
-                item[2] = int(a[1])
+                item['salaryMax'] = int(a[1])
         except:
             pass
 
         return item
 
     def getItems(self, dom):
-        items = []
         try:
-            a = dom.findAll('div', {'class': 'vacancy-serp-item'})
+            return dom.findAll('div', {'class': 'vacancy-serp-item'})
         except:
             return []
 
-        for i in a:
-            item = self.getItem(i)
-            if item:
-                items.append(item)
-
-        return items
-
     def getLink(self, page=False):
-        s = f'text={self.query}'
+        s = 'https://hh.ru/search/vacancy?L_is_autosearch=false' \
+            f'&area=1&clusters=true&enable_snippets=true&text={self.query}'
+
         if page:
             s += f'&page={page-1}'
         return s
@@ -295,11 +321,17 @@ while True:
 
     if i == 2:
         try:
-            salary = int(input('Введите зарплату: '))
+            inp = input('Введите зарплату: ').strip()
+            if inp == '':
+                continue
+            salary = int(inp)
         except:
-            print('неверный ввод')
+            print('! неверный ввод !')
         else:
-            search(salary)
+            nosalary = input(
+                ' учитывать "Договорную" зарплату [y/N]: ').lower() == 'y'
+            text = input(' искать текст: ').strip()
+            search(salary, nosalary, text)
 
     if i == 3:
         x = db.jobs.delete_many({})
