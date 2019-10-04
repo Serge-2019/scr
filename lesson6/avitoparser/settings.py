@@ -15,12 +15,13 @@ SPIDER_MODULES = ['avitoparser.spiders']
 NEWSPIDER_MODULE = 'avitoparser.spiders'
 
 LOG_ENABLED = True
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'ERROR'
 # LOG_FILE = 'jobparser_logs.txt'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'jobparser (+http://www.yourdomain.com)'
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36 OPR/63.0.3368.94'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko)'
+' Chrome/76.0.3809.132 Safari/537.36 OPR/63.0.3368.94'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False

@@ -14,11 +14,12 @@ from scrapy.pipelines.images import ImagesPipeline
 class DataBasePipeline(object):
     def __init__(self):
         client = MongoClient('localhost', 27017)
-        self.mongo_base = client.avito_photo
+        self.db = client['avito']
 
     def process_item(self, item, spider):
-        collection = self.mongo_base[spider.name]
+        collection = self.db['auto']
         collection.insert_one(item)
+        print(item['title'], item['price'])
         return item
 
 
@@ -30,7 +31,6 @@ class AvitoPhotosPipelines(ImagesPipeline):
                     yield scrapy.Request(img)
                 except TypeError as e:
                     print(e)
-
 
     def item_completed(self, results, item, info):
         if results:
