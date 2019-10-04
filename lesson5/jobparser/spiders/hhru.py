@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.http import HtmlResponse
+from scrapy.loader import ItemLoader
 from jobparser.items import JobparserItem
 
 
@@ -29,28 +30,20 @@ class HhruSpider(scrapy.Spider):
         for link in vacancies:
             yield response.follow(link, self.vacancy_parse)
 
-    def getMeta(self, response, base):
-        selectors = response.xpath(f"//span[@itemprop='{base}']//meta")
-        meta = {}
-        for i in selectors:
-            meta[i.attrib['itemprop']] = i.attrib['content']
-        return meta
+    def getMeta(self, group, name):
+        return f"//span[@itemprop='{group}']//meta[@itemprop='{name}']/@content"
 
     def vacancy_parse(self, response: HtmlResponse):
-        s = self.getMeta(response, 'baseSalary')
-        i = self.getMeta(response, 'identifier')
-        a = self.getMeta(response, 'address')
-
-        item = {
-            "name": "".join(response.xpath("//h1[@data-qa='vacancy-title']//text()").extract()),
-            "vacancy_id": i.get('value', '0'),
-            "company": i.get('name', ''),
-            "city": a.get('addressLocality', ''),
-            "region": a.get('addressRegion', ''),
-            "street": a.get('streetAddress', ''),
-            "minSalary": s.get('minValue', s.get('value', 0)),
-            "maxSalary": s.get('maxValue', s.get('minValue', s.get('value', 0))),
-            "currency": s.get('currency', 'RUR')
-        }
-
-        yield JobparserItem(**item)
+        loader = ItemLoader(item=JobparserItem(), response=response)
+        loader.add_xpath('name', "//h1[@data-qa='vacancy-title']//text()")
+        loader.add_xpath('company', self.getMeta('identifier', 'name'))
+        loader.add_xpath('vacancy_id', self.getMeta('identifier', 'value'))
+        loader.add_xpath('city', self.getMeta('address', 'addressLocality'))
+        loader.add_xpath('region', self.getMeta('address', 'addressRegion'))
+        loader.add_xpath('street', self.getMeta('address', 'streetAddress'))
+        loader.add_xpath('minSalary', self.getMeta('baseSalary', 'value'))
+        loader.add_xpath('minSalary', self.getMeta('baseSalary', 'minValue'))
+        loader.add_xpath('maxSalary', self.getMeta('baseSalary', 'maxValue'))
+        loader.add_xpath('currency', self.getMeta('baseSalary', 'currency'))
+        loader.add_value('url', response.url)
+        yield loader.load_item()

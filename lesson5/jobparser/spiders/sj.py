@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import re
 from scrapy.http import HtmlResponse
+from scrapy.loader import ItemLoader
 from jobparser.items import JobparserItem
 
 
@@ -31,28 +31,20 @@ class SJSpider(scrapy.Spider):
             yield response.follow(link, self.vacancy_parse)
 
     def vacancy_parse(self, response: HtmlResponse):
-        item = {
-            "name": response.xpath("//h1/text()").extract_first(default=None),
-            "vacancy_id": re.sub(r'.+-(\d+)\.html$', '\\1', response.url),
-            "company": response.xpath("//h2[contains(@class, '_15msI')]/text()").extract_first(default=None),
-        }
+        loader = ItemLoader(item=JobparserItem(), response=response)
+        loader.add_xpath('name', "//h1/text()")
+        loader.add_xpath('company', "//h2[contains(@class, '_15msI')]/text()")
+        loader.add_xpath('vacancy_id', '//div[@class="_1Tjoc _3ifBO Ghoh2 _3lvIR _3WTx0"]'
+                         '//div[@class="_2g1F-"][1]/span[1]/text()')
 
-        if not item['name']:
-            return
+        loader.add_xpath('street',
+                         "//span[@class='_6-z9f']/span/span[contains(@class, '_2JVkc')]/text() |"
+                         "//span[@class='_6-z9f']/span[contains(@class, '_2JVkc')]/text()"
+                         )
 
-        s = response.xpath("//span[@class='_3mfro _2Wp8I ZON4b PlM3e _2JVkc']/span/text()").extract()
-        a = list(filter(lambda x: x.isdigit(), map(lambda x: re.sub(r'[^\d]', '', x), s)))
-        if len(a) > 0:
-            item['minSalary'] = a[0]
-            item['maxSalary'] = a[1] if len(a) > 1 else a[0]
-
-        a = response.xpath(
-            "//span[@class='_6-z9f']/span/span[contains(@class, '_2JVkc')]/text() |"
-            "//span[@class='_6-z9f']/span[contains(@class, '_2JVkc')]/text()").extract_first(default=None)
-        if a:
-            a = a.split(",")
-            if len(a) > 0:
-                item['city'] = a.pop(0)
-                item['street'] = ",".join(map(lambda x: x.strip(), a))
-
-        yield JobparserItem(**item)
+        loader.add_xpath('minSalary', "//span[@class='_3mfro _2Wp8I ZON4b PlM3e _2JVkc']"
+                         "/span[1]/text()")
+        loader.add_xpath('maxSalary', "//span[@class='_3mfro _2Wp8I ZON4b PlM3e _2JVkc']"
+                         "/span[3]/text()")
+        loader.add_value('url', response.url)
+        yield loader.load_item()

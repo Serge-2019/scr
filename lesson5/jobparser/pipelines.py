@@ -15,6 +15,12 @@ class JobparserPipeline(object):
         pass
 
     def process_item(self, item, spider):
+        if spider.name == 'superjob':
+            a = item['street'].split(",")
+            if len(a):
+                item['city'] = a.pop(0)
+                item['street'] = ",".join(map(lambda x: x.strip(), a))
+
         collection = self.db[spider.name]
         if spider.name not in self.db.list_collection_names():
             collection.create_index([('vacancy_id', ASCENDING)], unique=True)
